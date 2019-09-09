@@ -69,7 +69,9 @@ class RandomErasingGenerator(Sequence):
 
             if xe + We <= w and ye + He <= h:
                 break
-        mask = np.random.randint(0, 255, (He, We, 3))  # 矩形がを生成 矩形内の値はランダム値
-        target[ye:ye + He, xe:xe + We, :] = mask  # 画像に矩形を重畳
+
+        # rescaleの比率によってここの255は変更してください
+        mask = np.random.randint(0, 255, (He, We, 3))
+        target[ye:ye + He, xe:xe + We, :] = mask
 
         return target

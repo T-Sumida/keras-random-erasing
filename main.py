@@ -4,7 +4,7 @@ from RandomErasingGenerator import RandomErasingGenerator
 import cv2
 
 if __name__ == "__main__":
-    reg = RandomErasingGenerator("../Pepsi/data", (256, 256), 10)
+    reg = RandomErasingGenerator("", (256, 256), 10)
     X, y = reg.__getitem__(1)
     counter = 0
     for x in X:
